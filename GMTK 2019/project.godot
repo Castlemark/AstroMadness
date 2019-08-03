@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Assets/Scripts/GravityKinematic.gd"
 }, {
 "base": "Node2D",
+"class": "WindowResizer",
+"language": "GDScript",
+"path": "res://Assets/Scripts/WindowResizer.gd"
+}, {
+"base": "Node2D",
 "class": "moving_objects",
 "language": "GDScript",
 "path": "res://Assets/Scripts/InputController.gd"
 } ]
 _global_script_class_icons={
 "GravityKinematic": "",
+"WindowResizer": "",
 "moving_objects": ""
 }
 
@@ -32,7 +38,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=228
+window/size/width=128
 window/size/height=128
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"

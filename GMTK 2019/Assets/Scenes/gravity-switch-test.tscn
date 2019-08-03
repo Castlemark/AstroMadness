@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Scripts/InputController.gd" type="Script" id=1]
-[ext_resource path="res://Assets/resources/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/resources/Box.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/resources/Ballon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scripts/WindowResizer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/InputController.gd" type="Script" id=2]
+[ext_resource path="res://Assets/resources/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/resources/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/resources/Ballon.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 114, 4 )
@@ -12,6 +13,8 @@ extents = Vector2( 114, 4 )
 extents = Vector2( 4, 56 )
 
 [node name="root" type="Node2D"]
+script = ExtResource( 1 )
+size = 29
 
 [node name="walls" type="Node2D" parent="."]
 editor/display_folded = true
@@ -79,13 +82,13 @@ margin_bottom = 56.0
 color = Color( 0.545098, 1, 0, 1 )
 
 [node name="moving_objects" type="Node2D" parent="."]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
-[node name="Player" parent="moving_objects" instance=ExtResource( 2 )]
-position = Vector2( 120, 24 )
+[node name="Player" parent="moving_objects" instance=ExtResource( 3 )]
+position = Vector2( 24, 32 )
 
-[node name="Box" parent="moving_objects" instance=ExtResource( 3 )]
+[node name="Box" parent="moving_objects" instance=ExtResource( 4 )]
 position = Vector2( 120, 88 )
 
-[node name="Ballon" parent="moving_objects" instance=ExtResource( 4 )]
+[node name="Ballon" parent="moving_objects" instance=ExtResource( 5 )]
 position = Vector2( 24, 100 )

@@ -23,7 +23,6 @@ func is_anyone_moving() -> bool:
 	
 	for child in self.get_children():
 		if child.is_moving():
-			print( "someone is moving" )
 			return true
 	
 	return false
