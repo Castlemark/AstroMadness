@@ -29,7 +29,7 @@ position = Vector2( 16, 116 )
 position = Vector2( 20, 87.2051 )
 
 [node name="Box2" parent="moving_objects" instance=ExtResource( 4 )]
-position = Vector2( 57, 116 )
+position = Vector2( 12, 13 )
 
 [node name="Ballon" parent="moving_objects" instance=ExtResource( 5 )]
 position = Vector2( 50.7524, 83.2051 )
@@ -38,9 +38,10 @@ position = Vector2( 50.7524, 83.2051 )
 
 [node name="SpikesDown" parent="unmoving_objects" instance=ExtResource( 6 )]
 position = Vector2( 28, 68 )
+active = false
 
 [node name="SpikesUp" parent="unmoving_objects" instance=ExtResource( 7 )]
-position = Vector2( 92.1937, 108 )
+position = Vector2( 12, 52 )
 
 [node name="SpikesRight" parent="unmoving_objects" instance=ExtResource( 8 )]
 position = Vector2( 116, 13 )
@@ -49,4 +50,9 @@ position = Vector2( 116, 13 )
 position = Vector2( 76, 83 )
 
 [node name="Laser" parent="unmoving_objects" instance=ExtResource( 10 )]
-position = Vector2( 36, 36 )
+position = Vector2( 60, 36 )
+active = true
+
+[node name="Laser2" parent="unmoving_objects" instance=ExtResource( 10 )]
+position = Vector2( 92, 68 )
+active = false
