@@ -24,15 +24,14 @@ func remove_beam():
 
 func cast_beam():
 	var space_state = get_world_2d().direct_space_state
-	var result2 = space_state.intersect_ray($BeamPosition.global_position + Vector2.DOWN * 3, $BeamPosition.global_position + Vector2.UP * 64, [self])
-	var result1 = space_state.intersect_ray($BeamPosition.global_position, $BeamPosition.global_position + Vector2.UP * 64, [self])
-	if result2:
-		$Beam.set_point_position(1, transform.xform_inv(result2.position - Vector2.DOWN * 3))
-		if ("Player" in result2.collider.name):
+	var result = space_state.intersect_ray($BeamPosition.global_position + Vector2.RIGHT * 3, $BeamPosition.global_position + Vector2.LEFT * 64, [self])
+	if result:
+		$Beam.set_point_position(1, transform.xform_inv(result.position - Vector2.RIGHT * 3))
+		if ("Player" in result.collider.name):
 			GameManager.reset_level()
 
 
-func _on_Laser_on_activation_changed():
+func _on_activation_changed():
 	if active:
 		start_beam()
 	else:
