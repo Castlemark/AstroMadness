@@ -48,6 +48,7 @@ position = Vector2( 116, 13 )
 
 [node name="SpikesLeft" parent="unmoving_objects" instance=ExtResource( 9 )]
 position = Vector2( 76, 83 )
+active = true
 
 [node name="Laser" parent="unmoving_objects" instance=ExtResource( 10 )]
 position = Vector2( 60, 36 )
@@ -55,4 +56,4 @@ active = true
 
 [node name="Laser2" parent="unmoving_objects" instance=ExtResource( 10 )]
 position = Vector2( 92, 68 )
-active = false
+active = true

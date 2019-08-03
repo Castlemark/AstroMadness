@@ -28,6 +28,8 @@ func cast_beam():
 	var result1 = space_state.intersect_ray($BeamPosition.global_position, $BeamPosition.global_position + Vector2.UP * 64, [self])
 	if result2:
 		$Beam.set_point_position(1, transform.xform_inv(result2.position - Vector2.DOWN * 3))
+		if ("Player" in result2.collider.name):
+			GameManager.reset_level()
 
 
 func _on_Laser_on_activation_changed():

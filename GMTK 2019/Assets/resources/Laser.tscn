@@ -20,7 +20,6 @@ shape = SubResource( 1 )
 z_index = -1
 width = 2.0
 default_color = Color( 0.305882, 0.286275, 0.372549, 1 )
-texture_mode = 0
 begin_cap_mode = 1
 end_cap_mode = 2
 
