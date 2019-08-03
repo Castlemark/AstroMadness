@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Scripts/WindowResizer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Tilesets/test_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Scripts/InputController.gd" type="Script" id=3]
+[ext_resource path="res://Assets/resources/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/resources/Goal.tscn" type="PackedScene" id=5]
+
+[node name="WindowResizer" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 196611, 1, 0, 327684, 2, 0, 327684, 3, 0, 327684, 4, 0, 327684, 5, 0, 196612, 6, 0, 196612, 7, 0, 196612, 8, 0, 327684, 9, 0, 327684, 10, 0, 196612, 11, 0, 196612, 12, 0, 196612, 13, 0, 327684, 14, 0, 196612, 15, 0, 196613, 65536, 0, 262147, 65551, 0, 262147, 131072, 0, 262149, 131087, 0, 262147, 196608, 0, 262147, 196623, 0, 262147, 262144, 0, 262147, 262159, 0, 262149, 327680, 0, 262149, 327684, 0, 327680, 327685, 0, 327684, 327686, 0, 196612, 327687, 0, 327684, 327688, 0, 327684, 327689, 0, 196612, 327690, 0, 196612, 327691, 0, 327684, 327692, 0, 327684, 327693, 0, 327684, 327694, 0, 196612, 327695, 0, 327682, 393216, 0, 262149, 393231, 0, 262149, 458752, 0, 262147, 458767, 0, 262147, 524288, 0, 262147, 524303, 0, 262149, 589824, 0, 262147, 589839, 0, 262147, 655360, 0, 393217, 655361, 0, 327684, 655362, 0, 327684, 655363, 0, 196612, 655364, 0, 327684, 655365, 0, 327684, 655366, 0, 196612, 655367, 0, 196612, 655368, 0, 327684, 655369, 0, 196612, 655370, 0, 393219, 655375, 0, 262149, 720896, 0, 262149, 720911, 0, 262149, 786432, 0, 262147, 786447, 0, 262147, 851968, 0, 262147, 851983, 0, 262147, 917504, 0, 262149, 917519, 0, 262149, 983040, 0, 327683, 983041, 0, 327684, 983042, 0, 327684, 983043, 0, 196612, 983044, 0, 327684, 983045, 0, 327684, 983046, 0, 196612, 983047, 0, 196612, 983048, 0, 196612, 983049, 0, 327684, 983050, 0, 327684, 983051, 0, 327684, 983052, 0, 327684, 983053, 0, 196612, 983054, 0, 196612, 983055, 0, 327685 )
+
+[node name="moving_objects" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Player" parent="moving_objects" instance=ExtResource( 4 )]
+position = Vector2( 12, 116 )
+z_index = 1
+
+[node name="static_objects" type="Node2D" parent="."]
+
+[node name="Goal" parent="static_objects" instance=ExtResource( 5 )]
+position = Vector2( 116, 36 )
