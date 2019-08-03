@@ -66,6 +66,10 @@ config/name="GMTK_2019"
 run/main_scene="res://Assets/Scenes/gravity-switch-test.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameManager="*res://Assets/Scripts/GameManager.gd"
+
 [display]
 
 window/size/width=128
