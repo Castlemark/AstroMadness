@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Scripts/WindowResizer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/test_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Scripts/InputController.gd" type="Script" id=3]
 [ext_resource path="res://Assets/resources/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/resources/Ballon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/resources/Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/resources/SpikesDown.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Scripts/GroupToggleable.gd" type="Script" id=8]
+[ext_resource path="res://Assets/resources/SpikesLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/resources/SpikesUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/resources/LaserUp.tscn" type="PackedScene" id=11]
 
 [node name="root" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,6 +23,7 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 458752, 2, 0, 327684, 3, 0, 327684, 4, 0, 196612, 5, 0, 327684, 6, 0, 196612, 7, 0, 196612, 8, 0, 196612, 9, 0, 196612, 10, 0, 196613, 65536, 0, 65541, 65537, 0, 65538, 65546, 0, 262149, 131072, 0, 65536, 131073, 0, 65539, 131079, 0, 0, 131081, 0, 0, 131082, 0, 458757, 196608, 0, 65541, 196609, 0, 262144, 196610, 0, 393219, 196612, 589831, 0, 196617, 0, 65541, 196618, 0, 65538, 262144, 0, 65541, 262145, 0, 65538, 262153, 0, 131072, 262154, 0, 393216, 327680, 0, 65541, 327681, 0, 65539, 327682, 196608, 0, 327683, 589825, 0, 327690, 0, 262149, 393216, 0, 65536, 393217, 0, 65539, 393219, 393225, 0, 393226, 0, 262147, 458752, 0, 65541, 458753, 0, 65538, 458756, 589829, 0, 458757, 0, 262146, 458762, 0, 262147, 524288, 0, 65536, 524289, 0, 65538, 524293, 0, 327683, 524294, 0, 327684, 524295, 0, 393219, 524298, 0, 262147, 589824, 0, 131072, 589825, 0, 458756, 589826, 0, 196612, 589827, 0, 196612, 589828, 0, 393219, 589832, 0, 327680, 589833, 0, 327684, 589834, 0, 327685 )
 
 [node name="moving_objects" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="Player" parent="moving_objects" instance=ExtResource( 4 )]
@@ -24,3 +31,37 @@ position = Vector2( 28, 12 )
 
 [node name="Ballon" parent="moving_objects" instance=ExtResource( 5 )]
 position = Vector2( 44, 36 )
+
+[node name="static_objects" type="Node2D" parent="."]
+
+[node name="Button" parent="static_objects" instance=ExtResource( 6 )]
+position = Vector2( 44, 52 )
+target_path = NodePath("../SpikesDown")
+
+[node name="SpikesDown" parent="static_objects" instance=ExtResource( 7 )]
+position = Vector2( 68, 68 )
+
+[node name="GroupToggleable" type="Node2D" parent="static_objects"]
+script = ExtResource( 8 )
+
+[node name="SpikesLeft" parent="static_objects/GroupToggleable" instance=ExtResource( 9 )]
+position = Vector2( 20, 36 )
+active = true
+
+[node name="SpikesLeft2" parent="static_objects/GroupToggleable" instance=ExtResource( 9 )]
+position = Vector2( 20, 44 )
+active = true
+
+[node name="SpikesUp" parent="static_objects/GroupToggleable" instance=ExtResource( 10 )]
+position = Vector2( 44, 12 )
+
+[node name="SpikesUp2" parent="static_objects/GroupToggleable" instance=ExtResource( 10 )]
+position = Vector2( 52, 12 )
+
+[node name="LaserUp" parent="static_objects/GroupToggleable" instance=ExtResource( 11 )]
+position = Vector2( 68, 12 )
+active = true
+
+[node name="Button2" parent="static_objects" instance=ExtResource( 6 )]
+position = Vector2( 36, 68 )
+target_path = NodePath("../GroupToggleable")

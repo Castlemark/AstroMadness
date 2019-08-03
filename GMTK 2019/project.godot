@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Scripts/GravityKinematic.gd"
 }, {
+"base": "Node2D",
+"class": "GroupToggleable",
+"language": "GDScript",
+"path": "res://Assets/Scripts/GroupToggleable.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "UngravityKinematic",
 "language": "GDScript",
@@ -51,6 +56,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "GravityKinematic": "",
+"GroupToggleable": "",
 "UngravityKinematic": "",
 "UngravityKinematicDown": "",
 "UngravityKinematicLeft": "",
