@@ -4,6 +4,7 @@ class_name moving_objects
 
 func _input(event: InputEvent) -> void:
 	var grav_dir : Vector2 = Physics2DServer.area_get_param(get_world_2d().space,Physics2DServer.AREA_PARAM_GRAVITY_VECTOR)
+	var grav_dir_past = grav_dir
 	
 	if ( !is_anyone_moving() ):
 	
@@ -16,6 +17,9 @@ func _input(event: InputEvent) -> void:
 		elif event.is_action_pressed("ui_right"):
 			grav_dir = Vector2(1, 0)
 	
+		$Player.rotate( grav_dir_past.angle_to(grav_dir) )
+		$Player.get_node( "astronaut" ).play("jump")
+		
 		Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, grav_dir)
 
 
