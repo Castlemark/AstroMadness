@@ -16,6 +16,9 @@ func _input(event: InputEvent) -> void:
 			grav_dir = Vector2(-1, 0)
 		elif event.is_action_pressed("ui_right"):
 			grav_dir = Vector2(1, 0)
+		
+		if event.is_action_pressed("restart"):
+			GameManager.reset_level()
 	
 		$Player.rotate( grav_dir_past.angle_to(grav_dir) )
 		$Player.get_node( "astronaut" ).play("jump")
