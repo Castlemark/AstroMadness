@@ -9,4 +9,4 @@ func _ready():
 
 func toggle_activation():
 	for child in children:
-		child.toggle_activation()
+		(child as UngravityKinematic).toggle_activation()

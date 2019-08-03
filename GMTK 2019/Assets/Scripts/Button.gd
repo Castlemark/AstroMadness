@@ -5,18 +5,20 @@ export var pushed_button : Texture
 export var target_path : NodePath
 
 var sprite : Sprite
-var target : Node
+var target
 
 func _ready():
 	sprite = $Sprite
 	sprite.texture = normal_button
 	
-	#target = get_node(target_path)
+	target = get_node(target_path)
 
 func _on_body_entered(body : PhysicsBody2D):
-	sprite.texture = pushed_button
-	#target.deactivate()
+	toggle_sprite()
+	target.toggle_activation()
 
-func _on_body_exited(body : PhysicsBody2D):
-	sprite.texture = normal_button
-	#target.activate()
+func toggle_sprite():
+	if sprite.texture == normal_button:
+		sprite.texture = pushed_button
+	else:
+		sprite.texture = normal_button

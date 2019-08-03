@@ -19,7 +19,7 @@ func start_beam():
 		$Beam.add_point(transform.xform_inv(result.position))
 
 func remove_beam():
-	$Beam.remove_point(2)
+	$Beam.clear_points()
 
 
 func cast_beam():
