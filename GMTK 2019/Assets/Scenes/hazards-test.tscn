@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Tilesets/test_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Scripts/InputController.gd" type="Script" id=2]
+[ext_resource path="res://Assets/resources/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/resources/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/resources/Ballon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/resources/SpikesDown.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/resources/SpikesUp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/resources/SpikesRight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/resources/SpikesLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/resources/Laser.tscn" type="PackedScene" id=10]
+
+[node name="root" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 196611, 1, 0, 327684, 2, 0, 327684, 3, 0, 327684, 4, 0, 327684, 5, 0, 327684, 6, 0, 196612, 7, 0, 327684, 8, 0, 327681, 9, 0, 196612, 10, 0, 196612, 11, 0, 196612, 12, 0, 196612, 13, 0, 327684, 14, 0, 196612, 15, 0, 196613, 65536, 0, 262147, 65544, 0, 262149, 65551, 0, 262147, 131072, 0, 262149, 131080, 0, 262147, 131087, 0, 262149, 196608, 0, 262147, 196616, 0, 262147, 196623, 0, 262149, 262144, 0, 262149, 262152, 0, 262149, 262159, 0, 262147, 327680, 0, 393217, 327681, 0, 196612, 327682, 0, 196612, 327683, 0, 196612, 327684, 0, 327684, 327685, 0, 327684, 327686, 0, 196612, 327687, 0, 327684, 327688, 0, 327685, 327695, 0, 262149, 393216, 0, 262149, 393231, 0, 262147, 458752, 0, 262147, 458767, 0, 262149, 524288, 0, 262147, 524292, 0, 196611, 524293, 0, 327684, 524294, 0, 196612, 524295, 0, 327684, 524296, 0, 196613, 524303, 0, 262147, 589824, 0, 393217, 589825, 0, 196612, 589826, 0, 196612, 589827, 0, 196612, 589828, 0, 327682, 589832, 0, 262147, 589835, 0, 262146, 589839, 0, 262149, 655360, 0, 262149, 655364, 0, 262147, 655368, 0, 262149, 655371, 0, 262147, 655375, 0, 262149, 720896, 0, 262149, 720900, 0, 262149, 720904, 0, 262149, 720907, 0, 262149, 720911, 0, 262149, 786432, 0, 393217, 786433, 0, 196612, 786434, 0, 327684, 786435, 0, 327684, 786436, 0, 393218, 786437, 0, 196612, 786438, 0, 196612, 786439, 0, 327684, 786440, 0, 393218, 786441, 0, 196612, 786442, 0, 196612, 786443, 0, 393218, 786444, 0, 196612, 786445, 0, 393219, 786447, 0, 262149, 851968, 0, 262147, 851983, 0, 262147, 917504, 0, 262147, 917519, 0, 262149, 983040, 0, 327683, 983041, 0, 327684, 983042, 0, 196612, 983043, 0, 327684, 983044, 0, 327684, 983045, 0, 196612, 983046, 0, 196612, 983047, 0, 196612, 983048, 0, 327684, 983049, 0, 196612, 983050, 0, 327684, 983051, 0, 327684, 983052, 0, 196612, 983053, 0, 327684, 983054, 0, 327684, 983055, 0, 327685 )
+
+[node name="moving_objects" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Player" parent="moving_objects" instance=ExtResource( 3 )]
+position = Vector2( 16, 116 )
+
+[node name="Box" parent="moving_objects" instance=ExtResource( 4 )]
+position = Vector2( 20, 87.2051 )
+
+[node name="Box2" parent="moving_objects" instance=ExtResource( 4 )]
+position = Vector2( 57, 116 )
+
+[node name="Ballon" parent="moving_objects" instance=ExtResource( 5 )]
+position = Vector2( 50.7524, 83.2051 )
+
+[node name="unmoving_objects" type="Node2D" parent="."]
+
+[node name="SpikesDown" parent="unmoving_objects" instance=ExtResource( 6 )]
+position = Vector2( 28, 68 )
+
+[node name="SpikesUp" parent="unmoving_objects" instance=ExtResource( 7 )]
+position = Vector2( 92.1937, 108 )
+
+[node name="SpikesRight" parent="unmoving_objects" instance=ExtResource( 8 )]
+position = Vector2( 116, 13 )
+
+[node name="SpikesLeft" parent="unmoving_objects" instance=ExtResource( 9 )]
+position = Vector2( 76, 83 )
+
+[node name="Laser" parent="unmoving_objects" instance=ExtResource( 10 )]
+position = Vector2( 36, 36 )
