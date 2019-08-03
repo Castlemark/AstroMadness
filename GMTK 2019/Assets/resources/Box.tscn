@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/Box.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.9
+
+[node name="Box" type="KinematicBody2D"]
+position = Vector2( 116, 20 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 4.0
+margin_bottom = 4.0
+color = Color( 0.286275, 0, 0.992157, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
