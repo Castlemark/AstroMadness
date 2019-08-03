@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "GravityKinematic",
 "language": "GDScript",
 "path": "res://Assets/Scripts/GravityKinematic.gd"
+}, {
+"base": "Node2D",
+"class": "moving_objects",
+"language": "GDScript",
+"path": "res://Assets/Scripts/InputController.gd"
 } ]
 _global_script_class_icons={
-"GravityKinematic": ""
+"GravityKinematic": "",
+"moving_objects": ""
 }
 
 [application]

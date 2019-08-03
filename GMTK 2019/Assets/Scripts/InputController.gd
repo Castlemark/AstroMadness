@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name moving_objects
+
 func _input(event: InputEvent) -> void:
 	var grav_dir : Vector2 = Physics2DServer.area_get_param(get_world_2d().space,Physics2DServer.AREA_PARAM_GRAVITY_VECTOR)
 	
