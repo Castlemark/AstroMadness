@@ -5,7 +5,8 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if ("Spikes" in collision.collider.name):
-			reset_level()
+			if collision.collider.is_active():
+				reset_level()
 
 func reset_level():
 	Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
