@@ -13,4 +13,4 @@ func _on_Tutorial_pressed() -> void:
 
 
 func _on_Exit_pressed() -> void:
-	print("Exiting Game")
+	get_tree().quit()
