@@ -14,6 +14,31 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Scripts/GravityKinematic.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "UngravityKinematic",
+"language": "GDScript",
+"path": "res://Assets/Scripts/UngravityKinematic.gd"
+}, {
+"base": "UngravityKinematic",
+"class": "UngravityKinematicDown",
+"language": "GDScript",
+"path": "res://Assets/Scripts/UngravityDown.gd"
+}, {
+"base": "UngravityKinematic",
+"class": "UngravityKinematicLeft",
+"language": "GDScript",
+"path": "res://Assets/Scripts/UngravityLeft.gd"
+}, {
+"base": "UngravityKinematic",
+"class": "UngravityKinematicRight",
+"language": "GDScript",
+"path": "res://Assets/Scripts/UngravityRight.gd"
+}, {
+"base": "UngravityKinematic",
+"class": "UngravityKinematicUp",
+"language": "GDScript",
+"path": "res://Assets/Scripts/UngravityUp.gd"
+}, {
 "base": "Node2D",
 "class": "WindowResizer",
 "language": "GDScript",
@@ -26,6 +51,11 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "GravityKinematic": "",
+"UngravityKinematic": "",
+"UngravityKinematicDown": "",
+"UngravityKinematicLeft": "",
+"UngravityKinematicRight": "",
+"UngravityKinematicUp": "",
 "WindowResizer": "",
 "moving_objects": ""
 }
