@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 var grav_str : float
-var prova : String = "hola"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

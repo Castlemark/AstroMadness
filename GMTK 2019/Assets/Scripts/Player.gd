@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 var grav_str: float
-var grav_dir : Vector2
 
 var colliding : bool
 
