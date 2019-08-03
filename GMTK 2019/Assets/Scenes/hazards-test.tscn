@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Tilesets/test_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Scripts/InputController.gd" type="Script" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://Assets/resources/SpikesUp.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/resources/SpikesRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/resources/SpikesLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/resources/Laser.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/resources/LaserDown.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/resources/LaserUp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/resources/LaserRight.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/resources/LaserLeft.tscn" type="PackedScene" id=13]
 
 [node name="root" type="Node2D"]
 
@@ -29,7 +32,7 @@ position = Vector2( 16, 116 )
 position = Vector2( 20, 87.2051 )
 
 [node name="Box2" parent="moving_objects" instance=ExtResource( 4 )]
-position = Vector2( 12, 13 )
+position = Vector2( 30, 36 )
 
 [node name="Ballon" parent="moving_objects" instance=ExtResource( 5 )]
 position = Vector2( 50.7524, 83.2051 )
@@ -48,11 +51,24 @@ position = Vector2( 116, 13 )
 
 [node name="SpikesLeft" parent="unmoving_objects" instance=ExtResource( 9 )]
 position = Vector2( 76, 83 )
+active = true
 
 [node name="Laser" parent="unmoving_objects" instance=ExtResource( 10 )]
-position = Vector2( 60, 36 )
+position = Vector2( 47, 36 )
 active = true
 
 [node name="Laser2" parent="unmoving_objects" instance=ExtResource( 10 )]
 position = Vector2( 92, 68 )
 active = false
+
+[node name="LaserUp" parent="unmoving_objects" instance=ExtResource( 11 )]
+position = Vector2( 28, 12 )
+active = true
+
+[node name="LaserRight" parent="unmoving_objects" instance=ExtResource( 12 )]
+position = Vector2( 60, 20 )
+active = true
+
+[node name="LaserLeft" parent="unmoving_objects" instance=ExtResource( 13 )]
+position = Vector2( 12, 26 )
+active = true
