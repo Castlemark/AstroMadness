@@ -7,7 +7,7 @@ var direction : float = 1
 var motion : Vector2
 
 func _ready():
-	grav_str = Physics2DServer.area_get_param(get_world_2d().space,Physics2DServer.AREA_PARAM_GRAVITY)
+	grav_str = Physics2DServer.area_get_param(get_world_2d().space,Physics2DServer.AREA_PARAM_GRAVITY) / 2
 
 
 func _process(delta):

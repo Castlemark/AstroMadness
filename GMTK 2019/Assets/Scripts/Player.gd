@@ -1,5 +1,12 @@
 extends GravityKinematic
 
+func _process(delta):
+	._process(delta)
+	if self.is_moving():
+		$astronaut.play("fall")
+	else:
+		$astronaut.play("idle")
+
 func _physics_process(delta):
 	._physics_process(delta)
 	for i in get_slide_count():

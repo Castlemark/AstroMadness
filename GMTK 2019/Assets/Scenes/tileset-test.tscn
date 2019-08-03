@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Scripts/WindowResizer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/test_tileset.tres" type="TileSet" id=2]
@@ -8,9 +8,10 @@
 [ext_resource path="res://Assets/resources/Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/resources/SpikesDown.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Scripts/GroupToggleable.gd" type="Script" id=8]
-[ext_resource path="res://Assets/resources/SpikesLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/resources/SpikesUp.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/resources/LaserUp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/resources/SpikesUp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/resources/LaserUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/resources/SpikesLeft.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/resources/SpikesRight.tscn" type="PackedScene" id=12]
 
 [node name="root" type="Node2D"]
 script = ExtResource( 1 )
@@ -44,23 +45,24 @@ position = Vector2( 68, 68 )
 [node name="GroupToggleable" type="Node2D" parent="static_objects"]
 script = ExtResource( 8 )
 
-[node name="SpikesLeft" parent="static_objects/GroupToggleable" instance=ExtResource( 9 )]
-position = Vector2( 20, 36 )
-active = true
-
-[node name="SpikesLeft2" parent="static_objects/GroupToggleable" instance=ExtResource( 9 )]
-position = Vector2( 20, 44 )
-active = true
-
-[node name="SpikesUp" parent="static_objects/GroupToggleable" instance=ExtResource( 10 )]
+[node name="SpikesUp" parent="static_objects/GroupToggleable" instance=ExtResource( 9 )]
 position = Vector2( 44, 12 )
 
-[node name="SpikesUp2" parent="static_objects/GroupToggleable" instance=ExtResource( 10 )]
+[node name="SpikesUp2" parent="static_objects/GroupToggleable" instance=ExtResource( 9 )]
 position = Vector2( 52, 12 )
 
-[node name="LaserUp" parent="static_objects/GroupToggleable" instance=ExtResource( 11 )]
+[node name="LaserUp" parent="static_objects/GroupToggleable" instance=ExtResource( 10 )]
 position = Vector2( 68, 12 )
 active = true
+
+[node name="SpikesLeft" parent="static_objects/GroupToggleable" instance=ExtResource( 11 )]
+position = Vector2( 20, 36 )
+
+[node name="SpikesDown" parent="static_objects/GroupToggleable" instance=ExtResource( 7 )]
+position = Vector2( 20, 68 )
+
+[node name="SpikesRight" parent="static_objects/GroupToggleable" instance=ExtResource( 12 )]
+position = Vector2( 52, 20 )
 
 [node name="Button2" parent="static_objects" instance=ExtResource( 6 )]
 position = Vector2( 36, 68 )
