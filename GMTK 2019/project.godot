@@ -76,6 +76,11 @@ config/icon="res://icon.png"
 
 GameManager="*res://Assets/Scripts/GameManager.gd"
 
+[debug]
+
+gdscript/warnings/unused_argument=false
+gdscript/warnings/return_value_discarded=false
+
 [display]
 
 window/size/width=128
