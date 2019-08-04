@@ -9,7 +9,6 @@ func _ready() -> void:
 	OS.window_position -= OS.window_size/2
 
 func reset_level():
-	Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
 	var current_scene = get_tree().get_current_scene().filename
 	get_tree().change_scene(current_scene)
 
@@ -33,3 +32,4 @@ func _deferred_go_to_next_level():
 		
 		get_tree().get_root().add_child(current_scene)
 		get_tree().set_current_scene(current_scene)
+		Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
