@@ -1,6 +1,7 @@
 extends Node2D
 
 var level_idx : int
+var menu : Resource = preload("res://Assets/Scenes/UI.tscn")
 var end_screen : Resource = preload("res://Assets/Scenes/thank-you.tscn")
 var end_music : Resource = preload("res://Assets/Audio/Music/Blue Surprise NES.wav")
 
@@ -58,7 +59,7 @@ func _change_to_end_music():
 
 func _input(event):
 	if event.is_action_pressed("quit"):
-		get_tree().quit()
+		go_to_scene(menu)
 	if event.is_action_pressed("fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
 		if get_tree().get_current_scene().has_node("FullscreenIco"):
