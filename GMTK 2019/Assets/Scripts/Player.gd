@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	._process(delta)
-	if self.is_moving():
+	if self.motion.length() != 0:
 		$astronaut.play("fall")
 	else:
 		$astronaut.play("idle")

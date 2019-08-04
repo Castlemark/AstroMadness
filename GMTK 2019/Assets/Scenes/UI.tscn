@@ -48,7 +48,7 @@ texture = ExtResource( 4 )
 [node name="TextureRect" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 16 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
