@@ -1,6 +1,7 @@
 extends Node2D
 
 var level_idx : int
+var end_screen : Resource = preload("res://Assets/Scenes/thank-you.tscn")
 
 func _ready() -> void:
 	level_idx = 0
@@ -24,13 +25,11 @@ func _deferred_go_to_next_level():
 	var scene : Resource = load("res://Assets/Scenes/Levels/Level_" + str(level_idx) + ".tscn")
 	
 	if scene == null:
-		print("Go to end screen")
-	else:
-		print("going to level " + str(level_idx))
-		
-		current_scene.free()
-		current_scene = scene.instance()
-		
-		get_tree().get_root().add_child(current_scene)
-		get_tree().set_current_scene(current_scene)
-		Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
+		scene = end_screen
+	
+	current_scene.free()
+	current_scene = scene.instance()
+	
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+	Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)

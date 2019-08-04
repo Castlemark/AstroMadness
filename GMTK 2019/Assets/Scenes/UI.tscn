@@ -37,7 +37,6 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 2, 2, 1, 0, 3, 1, 131076, 4, 1, 131076,
 [node name="TextureRect" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 16 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
