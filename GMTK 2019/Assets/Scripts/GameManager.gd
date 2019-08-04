@@ -33,3 +33,16 @@ func _deferred_go_to_next_level():
 		get_tree().get_root().add_child(current_scene)
 		get_tree().set_current_scene(current_scene)
 		Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
+
+func _input(event):
+	if event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = not OS.window_fullscreen
+	if event.is_action_pressed("mute"):
+		if MusicPlayer.is_playing():
+			MusicPlayer.stop()
+			if get_tree().get_current_scene().has_node("MusicIco"):
+				get_tree().get_current_scene().get_node("MusicIco").set_texture(load("res://Assets/Sprites/music2.png"))
+		else:
+			MusicPlayer.play()
+			if get_tree().get_current_scene().has_node("MusicIco"):
+				get_tree().get_current_scene().get_node("MusicIco").set_texture(load("res://Assets/Sprites/music1.png"))
