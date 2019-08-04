@@ -24,7 +24,7 @@ func remove_beam():
 
 func cast_beam():
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray($BeamPosition.global_position + Vector2.RIGHT * 3, $BeamPosition.global_position + Vector2.LEFT * 64, [self])
+	var result = space_state.intersect_ray($BeamPosition.global_position + Vector2.RIGHT * 3, $BeamPosition.global_position + Vector2.LEFT * 256, [self])
 	if result:
 		$Beam.set_point_position(1, transform.xform_inv(result.position - Vector2.RIGHT * 3))
 		if ("Player" in result.collider.name):
