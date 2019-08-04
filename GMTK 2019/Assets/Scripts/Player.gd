@@ -1,5 +1,9 @@
 extends GravityKinematic
 
+func _ready():
+	._ready()
+	grav_str *= 0.5
+
 func _process(delta):
 	._process(delta)
 	if self.is_moving():
