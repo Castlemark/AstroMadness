@@ -68,7 +68,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GMTK_2019"
+config/name="astromadness"
 run/main_scene="res://Assets/Scenes/UI.tscn"
 config/icon="res://icon.png"
 
