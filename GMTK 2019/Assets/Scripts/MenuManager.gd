@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$CenterContainer/Divider/Menu/Play.grab_focus()
 	pass
 
 
