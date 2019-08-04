@@ -11,8 +11,12 @@ func _process(delta):
 	._process(delta)
 	if self.motion.length() != 0:
 		$astronaut.play("fall")
+	elif prev_motion != 0:
+		$AudioStreamPlayer.play(0.0)
 	else:
 		$astronaut.play("idle")
+	
+	prev_motion = motion.length()
 
 func _physics_process(delta):
 	._physics_process(delta)
@@ -21,10 +25,3 @@ func _physics_process(delta):
 		if ("Spikes" in collision.collider.name):
 			if collision.collider.is_active():
 				GameManager.reset_level()
-
-func is_moving():
-	
-	if motion.length() == 0 and prev_motion != 0:
-		$AudioStreamPlayer.play(0.0)
-	prev_motion = motion.length()
-	.is_moving()
