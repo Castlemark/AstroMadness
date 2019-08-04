@@ -18,5 +18,5 @@ func _on_Exit_pressed() -> void:
 	get_tree().quit()
 
 
-func _on_Fullscreen_toggled(button_pressed: bool) -> void:
-	OS.window_fullscreen = button_pressed
+func _on_Rate_pressed():
+	OS.shell_open("https://itch.io/jam/gmtk-2019")
