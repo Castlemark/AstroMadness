@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_Rating_pressed() -> void:
-	OS.shell_open("https://castlemark.github.io")
+	OS.shell_open("https://itch.io/jam/gmtk-2019/rate/461702")

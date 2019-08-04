@@ -18,4 +18,4 @@ func _on_Exit_pressed() -> void:
 
 
 func _on_Rate_pressed():
-	OS.shell_open("https://itch.io/jam/gmtk-2019")
+	OS.shell_open("https://itch.io/jam/gmtk-2019/rate/461702")

@@ -15,6 +15,21 @@ func reset_level():
 	var current_scene = get_tree().get_current_scene().filename
 	get_tree().change_scene(current_scene)
 
+func go_to_scene(scene : Resource) -> void:
+	call_deferred("_deferred_go_to_scene", scene)
+
+func _deferred_go_to_scene(scene : Resource) -> void:
+	var root = get_tree().get_root()
+	var current_scene : Node = root.get_child(root.get_child_count() - 1)
+	
+	current_scene.free()
+	current_scene = scene.instance()
+	
+	
+	# Add it to the active scene, as child of root.
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+
 func go_to_next_level():
 	call_deferred("_deferred_go_to_next_level")
 
