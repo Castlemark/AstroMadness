@@ -29,9 +29,6 @@ position = Vector2( 12, 76 )
 [node name="Box2" parent="moving_objects" instance=ExtResource( 5 )]
 position = Vector2( 68, 116 )
 
-[node name="Box3" parent="moving_objects" instance=ExtResource( 5 )]
-position = Vector2( 92, 36 )
-
 [node name="static_objects" type="Node2D" parent="."]
 
 [node name="Goal" parent="static_objects" instance=ExtResource( 6 )]
