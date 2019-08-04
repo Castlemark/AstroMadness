@@ -4,6 +4,9 @@ func _ready():
 	$CenterContainer/Divider/Menu/Play.grab_focus()
 	pass
 
+func _process(delta):
+	get_node("CenterContainer").get_node("Divider/Menu/Options/Fullscreen").set_pressed(OS.window_fullscreen)
+
 
 func _on_Play_pressed() -> void:
 	GameManager.go_to_next_level()
