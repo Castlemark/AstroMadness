@@ -14,3 +14,7 @@ func _on_Tutorial_pressed() -> void:
 
 func _on_Exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_Fullscreen_toggled(button_pressed: bool) -> void:
+	OS.window_fullscreen = button_pressed
