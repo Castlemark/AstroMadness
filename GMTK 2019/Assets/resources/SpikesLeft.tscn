@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Sprites/hazards-spikes1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 4 )
+extents = Vector2( 3.5, 3.5 )
 
 [node name="SpikesLeft" type="KinematicBody2D"]
 rotation = 1.57079
