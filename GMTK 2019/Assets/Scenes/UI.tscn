@@ -48,7 +48,7 @@ texture = ExtResource( 4 )
 [node name="TextureRect" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 16 )
 frames = SubResource( 1 )
-frame = 6
+frame = 4
 playing = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -122,7 +122,7 @@ align = 0
 margin_top = 96.0
 margin_right = 100.0
 margin_bottom = 116.0
-text = "Rate us!"
+text = "Rate Us!"
 icon = ExtResource( 16 )
 align = 0
 [connection signal="pressed" from="CenterContainer/Divider/Menu/Play" to="." method="_on_Play_pressed"]

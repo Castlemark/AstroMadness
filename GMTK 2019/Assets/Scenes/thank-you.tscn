@@ -25,15 +25,15 @@ margin_right = -16.0
 margin_bottom = -16.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 12.0
+margin_left = 10.0
 margin_top = 20.0
-margin_right = 83.0
+margin_right = 85.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 71.0
+margin_right = 75.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -44,8 +44,8 @@ autowrap = true
 
 [node name="Rating" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 35.0
-margin_right = 71.0
+margin_right = 75.0
 margin_bottom = 55.0
-text = "Rate Us"
+text = "Rate Us!"
 icon = ExtResource( 3 )
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Rating" to="." method="_on_Rating_pressed"]

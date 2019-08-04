@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	pass
+	$CenterContainer/VBoxContainer/Rating.grab_focus()
 
 
 func _on_Rating_pressed() -> void:
