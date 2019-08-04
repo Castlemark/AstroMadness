@@ -2,6 +2,7 @@ extends Node2D
 
 var level_idx : int
 var end_screen : Resource = preload("res://Assets/Scenes/thank-you.tscn")
+var end_music : Resource = preload("res://Assets/Audio/Music/Blue Surprise NES.wav")
 
 func _ready() -> void:
 	level_idx = 0
@@ -26,6 +27,7 @@ func _deferred_go_to_next_level():
 	
 	if scene == null:
 		scene = end_screen
+		_change_to_end_music()
 	
 	current_scene.free()
 	current_scene = scene.instance()
@@ -33,6 +35,11 @@ func _deferred_go_to_next_level():
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)
 	Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
+
+func _change_to_end_music():
+	MusicPlayer.stop()
+	MusicPlayer.stream = end_music
+	MusicPlayer.play(0.0)
 
 func _input(event):
 	if event.is_action_pressed("quit"):
