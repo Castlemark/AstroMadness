@@ -1,23 +1,25 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Scripts/MenuManager.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Tilesets/test_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Sprites/music1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/title/title1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/title/title2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/title/title3.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/title/title4.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/title/title5.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/title/title6.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/title/title7.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/title/title8.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/astronaut.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/hazards-box.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/hazards-baloon.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/fullscreen2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/title/title1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/title/title2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/title/title3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/title/title4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/title/title5.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/title/title6.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/title/title7.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/title/title8.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/astronaut.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/hazards-box.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/hazards-baloon.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/hazards-goal.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -39,6 +41,10 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 2, 2, 1, 0, 3, 1, 131076, 4, 1, 131076,
 position = Vector2( 120, 8 )
 texture = ExtResource( 3 )
 
+[node name="FullscreenIco" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
+texture = ExtResource( 4 )
+
 [node name="TextureRect" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 16 )
 frames = SubResource( 1 )
@@ -51,13 +57,13 @@ anchor_bottom = 1.0
 
 [node name="Divider" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 14.0
-margin_top = 4.0
+margin_top = 6.0
 margin_right = 114.0
-margin_bottom = 124.0
+margin_bottom = 122.0
 
 [node name="Menu" type="VBoxContainer" parent="CenterContainer/Divider"]
 margin_right = 100.0
-margin_bottom = 120.0
+margin_bottom = 116.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -94,7 +100,7 @@ margin_top = 24.0
 margin_right = 100.0
 margin_bottom = 44.0
 text = "Start Playing"
-icon = ExtResource( 12 )
+icon = ExtResource( 13 )
 align = 0
 
 [node name="Tutorial" type="Button" parent="CenterContainer/Divider/Menu"]
@@ -102,36 +108,24 @@ margin_top = 48.0
 margin_right = 100.0
 margin_bottom = 68.0
 text = "How to play"
-icon = ExtResource( 13 )
+icon = ExtResource( 14 )
 
 [node name="Exit" type="Button" parent="CenterContainer/Divider/Menu"]
 margin_top = 72.0
 margin_right = 100.0
 margin_bottom = 92.0
 text = "Exit"
-icon = ExtResource( 14 )
+icon = ExtResource( 15 )
 align = 0
 
-[node name="Options" type="HBoxContainer" parent="CenterContainer/Divider/Menu"]
+[node name="Rate" type="Button" parent="CenterContainer/Divider/Menu"]
 margin_top = 96.0
 margin_right = 100.0
-margin_bottom = 120.0
-size_flags_horizontal = 3
-
-[node name="Fullscreen" type="CheckBox" parent="CenterContainer/Divider/Menu/Options"]
-margin_right = 24.0
-margin_bottom = 24.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-
-[node name="Label" type="Label" parent="CenterContainer/Divider/Menu/Options"]
-margin_left = 28.0
-margin_top = 5.0
-margin_right = 94.0
-margin_bottom = 19.0
-size_flags_horizontal = 5
-text = "Fullscreen"
+margin_bottom = 116.0
+text = "Rate us!"
+icon = ExtResource( 16 )
+align = 0
 [connection signal="pressed" from="CenterContainer/Divider/Menu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CenterContainer/Divider/Menu/Tutorial" to="." method="_on_Tutorial_pressed"]
 [connection signal="pressed" from="CenterContainer/Divider/Menu/Exit" to="." method="_on_Exit_pressed" flags=3]
-[connection signal="toggled" from="CenterContainer/Divider/Menu/Options/Fullscreen" to="." method="_on_Fullscreen_toggled"]
+[connection signal="pressed" from="CenterContainer/Divider/Menu/Rate" to="." method="_on_Rate_pressed" flags=3]
