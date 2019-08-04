@@ -36,8 +36,16 @@ func _deferred_go_to_next_level():
 		Physics2DServer.area_set_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR, Vector2.DOWN)
 
 func _input(event):
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
 	if event.is_action_pressed("fullscreen"):
 		OS.window_fullscreen = not OS.window_fullscreen
+		if get_tree().get_current_scene().has_node("FullscreenIco"):
+			if OS.window_fullscreen:
+				get_tree().get_current_scene().get_node("FullscreenIco").set_texture(load("res://Assets/Sprites/fullscreen1.png"))
+			else:
+				get_tree().get_current_scene().get_node("FullscreenIco").set_texture(load("res://Assets/Sprites/fullscreen2.png"))
+			
 	if event.is_action_pressed("mute"):
 		if MusicPlayer.is_playing():
 			MusicPlayer.stop()
