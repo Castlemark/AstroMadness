@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 func is_anyone_moving() -> bool:
 	
 	for child in self.get_children():
-		if child.is_moving():
+		if child.motion.length() != 0.0:
 			return true
 	
 	return false
