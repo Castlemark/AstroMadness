@@ -9,7 +9,7 @@ func _on_Play_pressed() -> void:
 
 
 func _on_Tutorial_pressed() -> void:
-	OS.shell_open("https://castlemark.github.io")
+	OS.shell_open("https://github.com/Castlemark/GMTK_2019/blob/master/README.md")
 	print("loading tutorial")
 
 
