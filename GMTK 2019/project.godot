@@ -76,6 +76,7 @@ config/icon="res://icon.png"
 
 GameManager="*res://Assets/Scripts/GameManager.gd"
 MusicPlayer="*res://Assets/resources/MusicPlayer.tscn"
+ResetPlayer="*res://Assets/resources/ResetPlayer.tscn"
 
 [debug]
 

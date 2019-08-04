@@ -37,7 +37,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 2, 2, 1, 0, 3, 1, 131076, 4, 1, 131076,
 [node name="TextureRect" type="AnimatedSprite" parent="."]
 position = Vector2( 64, 16 )
 frames = SubResource( 1 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -108,7 +108,6 @@ icon = ExtResource( 13 )
 align = 0
 
 [node name="Options" type="HBoxContainer" parent="CenterContainer/Divider/Menu"]
-editor/display_folded = true
 margin_top = 96.0
 margin_right = 100.0
 margin_bottom = 120.0

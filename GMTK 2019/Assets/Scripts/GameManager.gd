@@ -9,6 +9,7 @@ func _ready() -> void:
 	OS.window_position -= OS.window_size/2
 
 func reset_level():
+	ResetPlayer.play(0.0)
 	var current_scene = get_tree().get_current_scene().filename
 	get_tree().change_scene(current_scene)
 

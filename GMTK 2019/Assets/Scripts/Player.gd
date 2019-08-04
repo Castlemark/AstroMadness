@@ -1,7 +1,10 @@
 extends GravityKinematic
 
+var prev_motion : float
+
 func _ready():
 	._ready()
+	prev_motion = 0
 	grav_str *= 0.5
 
 func _process(delta):
@@ -18,3 +21,10 @@ func _physics_process(delta):
 		if ("Spikes" in collision.collider.name):
 			if collision.collider.is_active():
 				GameManager.reset_level()
+
+func is_moving():
+	
+	if motion.length() == 0 and prev_motion != 0:
+		$AudioStreamPlayer.play(0.0)
+	prev_motion = motion.length()
+	.is_moving()
