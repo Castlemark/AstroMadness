@@ -88,6 +88,7 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=128
 window/size/height=128
+window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -148,4 +149,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"
