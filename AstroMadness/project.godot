@@ -142,6 +142,10 @@ quit={
  ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
