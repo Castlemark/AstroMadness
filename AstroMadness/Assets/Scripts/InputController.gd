@@ -2,6 +2,10 @@ extends Node2D
 
 class_name moving_objects
 
+const DRAG_THRESHOLD : float = 8.0
+var drag_started : bool = false
+var max_drag : float = 0.0
+
 func _input(event: InputEvent) -> void:
 	var grav_dir : Vector2 = Physics2DServer.area_get_param(get_world_2d().space,Physics2DServer.AREA_PARAM_GRAVITY_VECTOR)
 	var grav_dir_past = grav_dir
@@ -20,6 +24,19 @@ func _input(event: InputEvent) -> void:
 		elif event.is_action_pressed("ui_right"):
 			grav_dir = Vector2(1, 0)
 		
+		if event is InputEventScreenTouch:
+			drag_started = event.pressed
+			
+			if not drag_started and max_drag > DRAG_THRESHOLD:
+				print(max_drag)
+				max_drag = 0.0
+		
+		if event is InputEventScreenDrag and drag_started:
+			var relative : float = (event as InputEventScreenDrag).relative.length()
+			
+			if relative > max_drag:
+				max_drag = relative
+	
 	
 		$Player.rotate( grav_dir_past.angle_to(grav_dir) )
 		$Player.get_node( "astronaut" ).play("jump")
